@@ -11,7 +11,7 @@ const IBMplex = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Imaginify",
+  title: "Imagic",
   description: "Image saas platform",
 };
 
