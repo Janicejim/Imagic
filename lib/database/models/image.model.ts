@@ -1,14 +1,15 @@
 import { model, models, Schema } from "mongoose";
 
 export interface IImage extends Document {
+    _id: string,
     title: string;
-    transformationTypes: string;
+    transformationType: string;
     publicId: string;
-    secureUrl: URL;
+    secureURL: string;
     width?: number;
     height?: number;
     config?: Record<string, any>;
-    transformationUrl?: URL;
+    transformationUrl?: string;
     aspectRatio?: string;
     color?: string;
     prompt?: string;
@@ -25,15 +26,15 @@ export interface IImage extends Document {
 
 const ImageSchema = new Schema({
     title: { type: String, require: true },
-    transformationTypes: { type: String, require: true },
+    transformationType: { type: String, require: true },
     publicId: { type: String, require: true },
-    secureUrl: { type: URL, require: true },
+    secureURL: { type: String, require: true },
     width: { type: Number },
     height: { type: Number },
     config: {
         type: Object
     },
-    transformationUrl: { type: URL },
+    transformationUrl: { type: String },
     aspectRatio: { type: String }, color: { type: String },
     prompt: { type: String },
     author: { type: Schema.Types.ObjectId, ref: 'User' },
