@@ -84,11 +84,13 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
 
         {userId === image.author.clerkId && (
           <div className="mt-4 space-y-4">
-            <Button asChild type="button" className="submit-button capitalize">
+            {(image.transformationType !== "removeBackground") && <Button asChild type="button" className="submit-button capitalize">
               <Link href={`/transformations/${image._id}/update`}>
                 Update Image
               </Link>
-            </Button>
+            </Button>}
+
+
 
             <DeleteConfirmation imageId={image._id} />
           </div>

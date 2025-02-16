@@ -157,7 +157,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
     }
 
     useEffect(() => {
-        if (image && (type === "restore" || type === "removeBackground")) {
+        if (image && (type === "removeBackground")) {
             setNewTransformation(transformationType.config)
         }
     }, [image, transformationType.config, type])
@@ -265,13 +265,14 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
 
                 <div className='flex flex-col gap-4'>
 
-                    <Button type="button"
+                    {((action === "Update" && type === "fill") || (action === "Update" && type === "removeBackground")) ? "" : <Button type="button"
                         className='submit-button capitalize'
                         disabled={isTransforming || newTransformation === null}
                         onClick={onTransformHandler}
                     >
                         {isTransforming ? "Transforming..." : "Apply Transformation"}
-                    </Button>
+                    </Button>}
+
 
                     <Button type="submit"
                         className='submit-button capitalize'

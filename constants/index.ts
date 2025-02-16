@@ -5,11 +5,6 @@ export const navLinks = [
         icon: "/assets/icons/home.svg",
     },
     {
-        label: "Image Restore",
-        route: "/transformations/add/restore",
-        icon: "/assets/icons/image.svg",
-    },
-    {
         label: "Generative Fill",
         route: "/transformations/add/fill",
         icon: "/assets/icons/stars.svg",
@@ -120,13 +115,6 @@ export const plans = [
 ];
 
 export const transformationTypes = {
-    restore: {
-        type: "restore",
-        title: "Restore Image",
-        subTitle: "Refine images by removing noise and imperfections",
-        config: { restore: true },
-        icon: "image.svg",
-    },
     removeBackground: {
         type: "removeBackground",
         title: "Background Remove",
